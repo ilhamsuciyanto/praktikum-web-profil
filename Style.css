@@ -1,92 +1,448 @@
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ============================================================
+   GOOGLE FONTS
+============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --bg:        #f7f6f3;
+  --surface:   #ffffff;
+  --border:    #e8e5e0;
+  --text-main: #1c1b18;
+  --text-sub:  #6b6860;
+  --accent:    #3d3b37;
+  --accent-lt: #5c5a55;
+  --badge-bg:  #eeecea;
+  --badge-txt: #4a4845;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.09);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.11);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-background-color: #f4f7f6;
-color: #333;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 48px;
+  background-color: rgba(247, 246, 243, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-sub);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text-main);
+}
+
+/* ============================================================
+   SECTION PROFIL
+============================================================ */
+.section-profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 92vh;
+  padding: 60px 20px;
+}
+
 .card {
-background: #ffffff;
-max-width: 400px;
-width: 100%;
-padding: 30px;
-border-radius: 16px;
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-text-align: center;
+  background: var(--surface);
+  max-width: 420px;
+  width: 100%;
+  padding: 40px 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
 }
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
 .avatar {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover; /* Menjaga rasio foto agar tidak distorsi/gepeng */
-    margin-bottom: 15px;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-    h1 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: #1a1a1a;
-    }
-    .subtitle {
-    font-size: 0.95rem;
-    color: #007bff;
-    margin-bottom: 15px;
-    font-weight: 600;
-    }
-    .bio {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #666;
-    margin-bottom: 20px;
-    }
-    .skills {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-    }
-    .badge {
-    background-color: #e9ecef;
-    color: #495057;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    }
-    .links {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    }
-    .btn {
-        text-decoration: none;
-        color: #fff;
-        background-color: #007bff;
-        padding: 9px 18px;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 500;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        }
-        .btn:hover {
-        background-color: #0056b3;
-        }
-        .btn-outline {
-        background-color: transparent;
-        color: #007bff;
-        border: 1px solid #007bff;
-        }
-        .btn-outline:hover {
-        background-color: #007bff;
-        color: #fff;
-        }
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.04);
+}
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  letter-spacing: -0.4px;
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.bio {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-sub);
+  margin-bottom: 24px;
+}
+
+/* ============================================================
+   SKILLS BADGE
+============================================================ */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-txt);
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.badge:hover {
+  background-color: var(--border);
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--accent);
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-lt);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   SECTION TITLE (shared)
+============================================================ */
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 40px;
+  letter-spacing: -0.4px;
+}
+
+/* ============================================================
+   SECTION PROYEK SAYA
+============================================================ */
+.section-proyek {
+  background-color: var(--bg);
+  padding: 72px 40px;
+}
+
+.proyek-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.proyek-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.proyek-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.proyek-img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--badge-bg);
+}
+
+.proyek-body {
+  padding: 18px 20px 22px;
+}
+
+.proyek-nama {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+
+.proyek-desc {
+  font-size: 0.83rem;
+  color: var(--text-sub);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.proyek-link {
+  font-size: 0.83rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.proyek-link:hover {
+  opacity: 0.65;
+}
+
+/* ============================================================
+   SECTION HUBUNGI SAYA
+============================================================ */
+.section-kontak {
+  background-color: var(--surface);
+  padding: 72px 40px 90px;
+  border-top: 1px solid var(--border);
+}
+
+.kontak-box {
+  background: var(--bg);
+  max-width: 580px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 7px;
+  letter-spacing: 0.1px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  background-color: var(--surface);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(61, 59, 55, 0.08);
+}
+
+.form-textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.btn-kirim {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-kirim:hover {
+  background-color: var(--accent-lt);
+  transform: translateY(-1px);
+}
+
+.btn-kirim:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   FOOTER KECIL (opsional — tidak perlu tambah HTML)
+============================================================ */
+
+/* ============================================================
+   LIGHTBOX (CSS ONLY)
+============================================================ */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+  color: var(--accent-lt);
+}
+
+/* ============================================================
+   RESPONSIVE — tablet / HP
+============================================================ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .proyek-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kontak-box {
+    padding: 28px 22px;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+}

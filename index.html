@@ -1,33 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil Saya</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya</title>
+  <meta name="description" content="Portofolio Mas'ud Hermansyah - Full Stack Developer dan Designer.">
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-<div class="card">
-<img src="images/foto-profil.jpg" alt="Foto Profil" class="avatar">
-<h1>Mas'ud Hermansyah</h1>
-<p class="subtitle">Full Stack Developer & Designer</p>
-<p class="bio">
-Halo! Saya seorang pengembang web yang berfokus pada pembuatan
-antarmuka pengguna yang bersih, responsif, dan mudah digunakan.
-</p>
-<div class="skills">
-<span class="badge">HTML</span>
-<span class="badge">CSS</span>
-<span class="badge">JavaScript</span>
-<span class="badge">React</span>
-</div>
-<div class="links">
-<a href="https://github.com/ilhamsuciyanto" target="_blank" class="btn">GitHub</a>
-<a href="https://linkedin.com" target="_blank"
-class="btn">LinkedIn</a>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=milhamsuciyanto12@gmail.com"
-class="btn btn-outline">Kontak</a>
-</div>
-</div>
+
+  <nav class="navbar">
+    <div class="navbar-brand">Portofolio</div>
+    <ul class="navbar-links">
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section id="profil" class="section-profil">
+    <div class="card">
+      <a href="#lb-profil"><img src="images/foto-profil.jpg" alt="Foto Profil" class="avatar"></a>
+      <h1>Muhammad Ilham Suciyanto</h1>
+      <p class="subtitle">Full Stack Developer &amp; Designer</p>
+      <p class="bio">
+        Saya adalah seorang Desainer dan Pengembang Web yang berkomitmen menghadirkan produk digital berkualitas tinggi.
+        Keahlian saya berpusat pada perancangan identitas visual dan pengembangan antarmuka web yang bersih, responsif, 
+        serta berorientasi pada kemudahan pengguna
+      </p>
+      <div class="skills">
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">React</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/ilhamsuciyanto" target="_blank" class="btn">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=milhamsuciyanto12@gmail.com"
+           class="btn btn-outline">Kontak</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek" class="section-proyek">
+    <h2 class="section-title">Proyek Saya</h2>
+    <div class="proyek-grid">
+
+  
+      <div class="proyek-card">
+        <a href="#lb-proyek1"><img src="images/proyek1.jpg" alt="Website E-Commerce" class="proyek-img"></a>
+        <div class="proyek-body">
+        <h3 class="proyek-nama">Website E-Commerce</h3>
+        <p class="proyek-desc">
+         Platform toko online dengan sistem keranjang belanja dan antarmuka responsif.
+          </p>
+      <a href="https://github.com/ilhamsuciyanto/projek-masih-setengah-jadi.git" target="_blank" class="proyek-link">Lihat Detail &#8594;</a>
+      </div>
+      </div>
+
+      <div class="proyek-card">
+        <a href="#lb-proyek2"><img src="images/proyek2.jpg" alt="Dashboard Analitik" class="proyek-img"></a>
+        <div class="proyek-body">
+          <h3 class="proyek-nama">Dashboard Analitik</h3>
+          <p class="proyek-desc">
+            Aplikasi web interaktif untuk visualisasi data statistik bisnis real-time.
+          </p>
+          <a href="#" class="proyek-link">Lihat Detail &#8594;</a>
+        </div>
+      </div>
+
+      <div class="proyek-card">
+        <a href="#lb-proyek4"><img src="images/proyek4.jpg" alt="Aplikasi Mobile Web" class="proyek-img"></a>
+        <div class="proyek-body">
+          <h3 class="proyek-nama">Desainer </h3>
+          <p class="proyek-desc">
+            Pembuatan aset ilustrasi digital berbasis vektor untuk kebutuhan aset website, materi cetak, dan bisnis.
+          </p>
+          <a href="#" class="proyek-link">Lihat Detail &#8594;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section id="kontak" class="section-kontak">
+    <h2 class="section-title">Hubungi Saya</h2>
+    <div class="kontak-box">
+      <form action="https://formsubmit.co/milhamsuciyanto12@gmail.com" method="POST">
+
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="Pesan Baru dari Web Portofolio">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-group">
+          <label for="nama" class="form-label">Nama Lengkap</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            class="form-input"
+            placeholder="Masukkan nama Anda"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="nama@email.com"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="pesan" class="form-label">Pesan</label>
+          <textarea
+            id="pesan"
+            name="pesan"
+            class="form-textarea"
+            placeholder="Tuliskan pesan Anda..."
+          ></textarea>
+        </div>
+
+        <button type="submit" id="btn-kirim" class="btn-kirim">Kirim Pesan</button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Lightbox Containers -->
+  <div class="lightbox" id="lb-profil">
+    <a href="#_" class="lightbox-close">&times;</a>
+    <img src="images/foto-profil.jpg" alt="Foto Profil Full">
+  </div>
+  <div class="lightbox" id="lb-proyek1">
+    <a href="#_" class="lightbox-close">&times;</a>
+    <img src="images/proyek1.jpg" alt="Proyek 1 Full">
+  </div>
+  <div class="lightbox" id="lb-proyek2">
+    <a href="#_" class="lightbox-close">&times;</a>
+    <img src="images/proyek2.jpg" alt="Proyek 2 Full">
+  </div>
+  <div class="lightbox" id="lb-proyek4">
+    <a href="#_" class="lightbox-close">&times;</a>
+    <img src="images/proyek4.jpg" alt="Proyek 4 Full">
+  </div>
+
 </body>
 </html>
